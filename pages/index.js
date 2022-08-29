@@ -15,6 +15,16 @@ export default function Home() {
         <h1 className={styles.title}>
           Welcome to <a href="https://goo.gl/maps/2a4YX3R8hC4dyfd28">Kalmuck Road Buddhist Temple!</a>
         </h1>
+        <div className={styles.imageWrapper}>
+          <img
+            className={styles.image}
+            src="https://patch.com/img/cdn/users/86539/2012/08/raw/d3cdb28eca92f909c7a7a319c6156a3c.jpg?width=1200"
+            alt="Kalmuck Road Buddhist Temple Image"
+          />
+        </div>
+        <h2 className={styles.subTitle}>
+          The website is coming soon
+        </h2>
       </main>
 
       <footer className={styles.footer}>
