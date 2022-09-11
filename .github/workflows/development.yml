@@ -4,7 +4,7 @@ name: Build and Deploy
 # events but only for the main branch
 on:
   push:
-    branches: [master]
+    branches: [develop]
   workflow_dispatch:
     inputs:
       logLevel:
@@ -27,9 +27,9 @@ jobs:
       - name: Build and Publish to Github Packages Registry
         uses: elgohr/Publish-Docker-Github-Action@master
         env:
-          PORT: ${{ secrets.PROD_PORT }}
+          PORT: ${{ secrets.DEV_PORT }}
         with:
-          name: alsharp/kalmuckroad.org/kalmuckroad
+          name: alsharp/kalmuckroad.org/kalmuckroad_dev
           registry: ghcr.io
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets. GITHUB_TOKEN }}
@@ -50,7 +50,7 @@ jobs:
           envs: GITHUB_USERNAME, GITHUB_TOKEN
           script: |
             docker login ghcr.io -u $GITHUB_USERNAME -p $GITHUB_TOKEN
-            docker pull ghcr.io/alsharp/kalmuckroad.org/kalmuckroad:latest
-            docker stop kalmuckroad
+            docker pull ghcr.io/alsharp/kalmuckroad.org/kalmuckroad_dev:latest
+            docker stop kalmuckroad_dev
             docker system prune -f
-            docker run --name kalmuckroad -dit -p 5100:5100 ghcr.io/alsharp/kalmuckroad.org/kalmuckroad:latest
+            docker run --name kalmuckroad_dev -dit -p 5101:5101 ghcr.io/alsharp/kalmuckroad.org/kalmuckroad_dev:latest

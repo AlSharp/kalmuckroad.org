@@ -26,6 +26,7 @@ RUN yarn build
 
 # Production image, copy all the files and run next
 FROM node:alpine AS runner
+ARG PORT
 WORKDIR /app
 RUN addgroup -g 1001 -S nodejs
 RUN adduser -S nextjs -u 1001
@@ -42,7 +43,7 @@ COPY --from=builder /app/pages ./pages
 USER nextjs
 
 # Expose
-EXPOSE 3000
+EXPOSE $PORT
 
 # Next.js collects completely anonymous telemetry data about general usage.
 # Learn more here: https://nextjs.org/telemetry
