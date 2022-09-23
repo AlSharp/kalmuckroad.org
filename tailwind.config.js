@@ -12,7 +12,7 @@ module.exports = {
     },
     extend: {
       screens: {
-        '2lg': '1170px'
+        'xlg': '1175px'
       }
     },
   },

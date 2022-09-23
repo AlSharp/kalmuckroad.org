@@ -5,6 +5,11 @@ const nextConfig = {
   env: {
     version: "0.1.1"
   },
+	experimental: {
+		images: {
+			allowFutureImage: true
+		}
+	},
   webpack: (config) => {
     config.module.rules
 			.find(({oneOf}) => !!oneOf).oneOf
