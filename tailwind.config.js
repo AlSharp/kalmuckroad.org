@@ -8,7 +8,8 @@ module.exports = {
     colors: {
       'kalmyk-yellow': '#ffd600',
       'kalmyk-blue': '#009cdd',
-      'tibet-red': '#881d22'
+      'tibet-red': '#881d22',
+      'txt-on-kalmyk-blue': '#fff'
     },
     extend: {
       screens: {
