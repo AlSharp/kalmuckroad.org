@@ -9,6 +9,8 @@ import 'swiper/css/autoplay';
 import 'swiper/css/effect-fade';
 import 'swiper/css/scrollbar';
 
+import EventCard from 'components/Cards/EventCard';
+
 export default function Home() {
   const cx = classNames.bind(styles);
 
@@ -45,6 +47,11 @@ export default function Home() {
           <h2 className="text-2xl text-txt-on-kalmyk-blue font-semibold uppercase text-center my-5">
             Upcoming holiday services
           </h2>
+          <EventCard
+            eventName="Tsagan Sar"
+            eventDesc="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+            eventURL="https://google.com"
+          />
           <div className="w-full text-center inline-grid gap-4 grid-cols-1 grid-rows-3 md:grid-cols-3 text-xl text-txt-on-kalmyk-blue font-semibold my-5">
             <span className="text-center">Gal Thalgen</span>
             <span className="text-center">Saturday, November 12, 2022</span>
