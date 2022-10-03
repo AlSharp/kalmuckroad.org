@@ -53,4 +53,4 @@ jobs:
             docker pull ghcr.io/alsharp/kalmuckroad.org/kalmuckroad_dev:latest
             docker stop kalmuckroad_dev
             docker system prune -f
-            docker run --name kalmuckroad_dev -dit -p 5101:5101 ghcr.io/alsharp/kalmuckroad.org/kalmuckroad_dev:latest
+            docker run --restart always --name kalmuckroad_dev -dit -p 5101:5101 ghcr.io/alsharp/kalmuckroad.org/kalmuckroad_dev:latest
