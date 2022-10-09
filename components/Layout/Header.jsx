@@ -1,8 +1,12 @@
 import styles from 'styles/layout.module.scss';
 import classNames from 'classnames/bind';
 import Image from 'next/future/image';
+import { useRouter } from 'next/router';
+import LinkWithCallback from 'components/Link/LinkWithCallback';
 
 export default function Header() {
+
+  const router = useRouter();
 
   const onMenuClick = () => {
     const menu = document.querySelector('nav.temple-nav-menu');
@@ -16,17 +20,21 @@ export default function Header() {
     menu.classList.toggle('-right-full');
   }
 
+  const navigateTo = (url) => {
+    router.push(url);
+  }
+
   const cx = classNames.bind(styles);
   return (
     <header>
       <div className={cx('headerLayout', 'flex items-center')}>
         <div className="flex w-full max-w-lg md:max-w-2xl lg:max-w-4xl xl:max-w-6xl py-2 px-2 md:px-6 justify-between mx-auto">
-          <div className={cx('templeLogoImage', 'hidden lg:block flex items-center mr-3 w-36')}>
+          <div className={cx('templeLogoImage', 'hidden lg:block flex items-center mr-3 w-36 cursor-pointer')} onClick={() => navigateTo('/')}>
             <Image fill className="!relative" src="/emblem.png" alt="Kalmuck Road Temple Emblem" />
           </div>
           <div className="flex w-full lg:flex-col">
             <div className={cx('templeLogoWrapper', 'flex flex-1 justify-between')}>
-              <div className={cx('templeLogoImage', 'lg:hidden flex items-center mr-2 w-24 md:w-36')}>
+              <div className={cx('templeLogoImage', 'lg:hidden flex items-center mr-2 w-24 md:w-36 cursor-pointer')} onClick={() => navigateTo('/')}>
                 <Image fill className="!relative !h-auto !w-auto" src="/emblem.png" alt="Kalmuck Road Temple Emblem" />
               </div>
               <div className={cx('templeLogoTitle', 'flex items-center')}>
@@ -54,22 +62,60 @@ export default function Header() {
                 <nav className={cx('temple-nav-menu', 'flex justify-between items-start fixed lg:relative top-0 buttom-0 -right-full lg:right-auto bg-kalmyk-yellow w-full lg:w-auto h-full z-10 lg:justify-items-end')}>
                   <ul className="lg:flex">
                     <li>
-                      <a className="block py-2 lg:py-1 px-3 w-max xl:text-lg text-tibet-red font-semibold" href="#">About Us</a>
+                      <LinkWithCallback
+                        className="block py-2 lg:py-1 px-3 w-max xl:text-lg text-tibet-red font-semibold"
+                        text="Home"
+                        href="/"
+                        onClick={onMenuClose}
+                      />
                     </li>
                     <li>
-                      <a className="block py-2 lg:py-1 px-3 w-max xl:text-lg text-tibet-red font-semibold" href="#">Events</a>
+                      <LinkWithCallback
+                        className="block py-2 lg:py-1 px-3 w-max xl:text-lg text-tibet-red font-semibold"
+                        text="About Us"
+                        href="/about"
+                        onClick={onMenuClose}
+                      />
                     </li>
                     <li>
-                      <a className="block py-2 lg:py-1 px-3 w-max xl:text-lg text-tibet-red font-semibold" href="#">Temple Life</a>
+                      <LinkWithCallback
+                        className="block py-2 lg:py-1 px-3 w-max xl:text-lg text-tibet-red font-semibold"
+                        text="Events"
+                        href="/events"
+                        onClick={onMenuClose}
+                      />
                     </li>
                     <li>
-                      <a className="block py-2 lg:py-1 px-3 w-max xl:text-lg text-tibet-red font-semibold" href="#">Gallery</a>
+                      <LinkWithCallback
+                        className="block py-2 lg:py-1 px-3 w-max xl:text-lg text-tibet-red font-semibold"
+                        text="Temple Life"
+                        href="/templelife"
+                        onClick={onMenuClose}
+                      />
                     </li>
                     <li>
-                      <a className="block py-2 lg:py-1 px-3 w-max xl:text-lg text-tibet-red font-semibold" href="#">Join & Support</a>
+                      <LinkWithCallback
+                        className="block py-2 lg:py-1 px-3 w-max xl:text-lg text-tibet-red font-semibold"
+                        text="Gallery"
+                        href="/gallery"
+                        onClick={onMenuClose}
+                      />
                     </li>
                     <li>
-                      <a className="block py-2 lg:py-1 px-3 w-max xl:text-lg text-tibet-red font-semibold" href="#">Contact</a>
+                      <LinkWithCallback
+                        className="block py-2 lg:py-1 px-3 w-max xl:text-lg text-tibet-red font-semibold"
+                        text="Join & Support"
+                        href="/join"
+                        onClick={onMenuClose}
+                      />
+                    </li>
+                    <li>
+                      <LinkWithCallback
+                        className="block py-2 lg:py-1 px-3 w-max xl:text-lg text-tibet-red font-semibold"
+                        text="Contact"
+                        href="/contact"
+                        onClick={onMenuClose}
+                      />
                     </li>
                   </ul>
                   <button

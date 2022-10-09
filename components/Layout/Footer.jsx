@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <footer>
       <div className={cx('footerLayout')}>
-        <div className="flex flex-col bg-kalmyk-yellow py-5">
+        <div className="flex flex-col py-5">
           <div className="mx-auto mb-5">
             <Image width={64} height={64} src="/favicon.png" alt="KalmuckRoad Software icon"/>
           </div>

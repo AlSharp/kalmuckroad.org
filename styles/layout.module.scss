@@ -7,6 +7,7 @@
 main {
   .main-layout {
     background-color: #f6f7f8;
+    min-height: calc(100vh - 340px);
   }
 }
 
@@ -20,6 +21,8 @@ header {
 
 footer {
   .footer-layout {
+    height: 200px;
     border-top: 20px solid $tibet-red;
+    background-color: $kalmyk-yellow;
   }
 }
