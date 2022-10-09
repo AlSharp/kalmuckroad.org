@@ -4,24 +4,22 @@
   padding: 0;
 }
 
-.main {
-  min-height: 100vh;
-  padding: 4rem 0;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+main {
+  .main-layout {
+    background-color: #f6f7f8;
+  }
 }
 
 header {
-  .layout-header {
-    height: 89px;
-    border-top: 5px solid $tibet-red;
+  .header-layout {
+    height: 140px;
+    border-bottom: 20px solid $tibet-red;
     background-color: $kalmyk-yellow;
   }
 }
 
-.footer {
-  border-bottom: 5px solid $tibet-red;
+footer {
+  .footer-layout {
+    border-top: 20px solid $tibet-red;
+  }
 }
