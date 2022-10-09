@@ -8,6 +8,7 @@ const CustomLink = forwardRef(({ className, text, onClick, href }, ref) => {
     </a>
   )
 })
+CustomLink.displayName = "LinkWithCallback";
 
 export default function LinkWithCallback({ className, href, text, onClick }) {
   return (
