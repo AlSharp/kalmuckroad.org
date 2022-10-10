@@ -28,13 +28,14 @@ jobs:
         uses: elgohr/Publish-Docker-Github-Action@master
         env:
           PORT: ${{ secrets.PROD_PORT }}
+          BRANCH: master
         with:
           name: alsharp/kalmuckroad.org/kalmuckroad
           registry: ghcr.io
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets. GITHUB_TOKEN }}
           dockerfile: Dockerfile
-          buildargs: PORT
+          buildargs: PORT, BRANCH
           tags: latest
 
       - name: Deploy package to a2hosting

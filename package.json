@@ -5,12 +5,14 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "generate-sitemap": "next-sitemap",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
     "classnames": "^2.3.2",
     "next": "12.2.5",
+    "next-sitemap": "^3.1.24",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "sass": "^1.54.9",

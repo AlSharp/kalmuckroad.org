@@ -22,7 +22,10 @@ COPY --from=deps /app/node_modules ./node_modules
 # ARG NODE_ENV=production
 # RUN echo ${NODE_ENV}
 # RUN NODE_ENV=${NODE_ENV} yarn build
+ARG BRANCH
+ENV BRANCH=$BRANCH
 RUN yarn build
+RUN if [ "$BRANCH" = "master" ] ; then yarn generate-sitemap ; fi
 
 # Production image, copy all the files and run next
 FROM node:alpine AS runner
