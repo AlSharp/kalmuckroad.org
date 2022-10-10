@@ -25,7 +25,7 @@ COPY --from=deps /app/node_modules ./node_modules
 ARG BRANCH
 ENV BRANCH=$BRANCH
 RUN yarn build
-RUN if [ "$BRANCH" = "master" ] ; then yarn postbuild ; fi
+RUN if [ "$BRANCH" = "master" ] ; then yarn generate-sitemap ; fi
 
 # Production image, copy all the files and run next
 FROM node:alpine AS runner
