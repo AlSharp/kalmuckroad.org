@@ -89,7 +89,7 @@ export default function Header() {
                       <LinkWithCallback
                         className="block py-2 lg:py-1 px-3 w-max xl:text-lg text-tibet-red font-semibold"
                         text="Temple Life"
-                        href="/templelife"
+                        href="/life"
                         onClick={onMenuClose}
                       />
                     </li>
@@ -105,7 +105,7 @@ export default function Header() {
                       <LinkWithCallback
                         className="block py-2 lg:py-1 px-3 w-max xl:text-lg text-tibet-red font-semibold"
                         text="Join & Support"
-                        href="/join"
+                        href="/donate"
                         onClick={onMenuClose}
                       />
                     </li>
