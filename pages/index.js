@@ -20,6 +20,10 @@ export default function Home() {
       <Head>
         <title>Kalmyk-Mongolian Buddhist Center</title>
         <meta
+          name="twitter:card"
+          content="summary_large_image"
+        />
+        <meta
           name="description"
           content="Buddhist temple serving the Kalmyk community (Howell, NJ)"
           key="desc"
@@ -29,13 +33,11 @@ export default function Home() {
           property="og:description"
           content="Buddhist temple serving the Kalmyk community (Howell, NJ)"
         />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.kalmuckroad.org" />
         <meta
           property="og:image"
           content="https://kalmuckroad.org/og_image.jpg"
-        />
-        <meta
-          name="twitter:card"
-          content="Buddhist temple serving the Kalmyk community (Howell, NJ)"
         />
         <link rel="icon" type="image/png" href="./favicon.png" />
       </Head>
