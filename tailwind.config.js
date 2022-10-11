@@ -14,6 +14,7 @@ module.exports = {
       'kalmyk-yellow': '#ffd600',
       'kalmyk-blue': '#3066be',
       'tibet-red': '#881d22',
+      'tibet-red-light': '#a04a4e',
       'txt-on-kalmyk-blue': '#fff',
       'txt-dark': '#07142c',
       black: colors.black,

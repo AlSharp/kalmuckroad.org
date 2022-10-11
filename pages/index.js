@@ -76,12 +76,16 @@ export default function Home() {
               </span>
             </div>
             <div className="mb-8">
-              <button className="bg-kalmyk-yellow hover:bg-yellow-500 text-txt-dark font-bold py-2 px-4 rounded mr-4">
-                Become a member
-              </button>
-              <button className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded ml-4">
-                Donate
-              </button>
+              <Link href="/donate">
+                <button className="bg-kalmyk-yellow hover:bg-yellow-500 text-txt-dark font-bold py-2 px-4 rounded mr-4">
+                  Become a member
+                </button>
+              </Link>
+              <Link href="/donate">
+                <button className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded ml-4">
+                  Donate
+                </button>
+              </Link>
             </div>
           </div>
           <div className="flex justify-center">
