@@ -8,9 +8,9 @@ export default function Footer() {
   return (
     <footer>
       <div className={cx('footerLayout')}>
-        <div className="flex h-full w-full max-w-lg md:max-w-2xl lg:max-w-4xl xl:max-w-6xl py-5 px-2 md:px-6 justify-between mx-auto">
-          <div>
-            <ul>
+        <div className="flex flex-col lg:flex-row min-h-full w-full max-w-lg md:max-w-2xl lg:max-w-4xl xl:max-w-6xl py-5 px-2 md:px-6 justify-between mx-auto">
+          <div className="order-1">
+            <ul className="text-center lg:text-left">
               <li className="mb-2">
                 <Link href="/">
                   <a className="font-semibold text-tibet-red hover:text-tibet-red-light hover:underline">Home</a>
@@ -38,16 +38,16 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-          <div className="flex flex-col h-full justify-between items-center">
+          <div className="flex flex-col justify-between items-center order-3 lg:order-2">
             <div className="mx-auto">
               <Image width={80} height={80} src="/favicon.png" alt="KalmuckRoad Software icon"/>
             </div>
-            <div className="text-center mb-2">
+            <div className="text-center mb-1 mt-5 lg:mt-0">
               <p>Copyright © 2022 Kalmyk-Mongolian Buddhist Center</p>
             </div>
           </div>
-          <div>
-            <ul>
+          <div className="order-2 lg:order-3">
+            <ul className="text-center lg:text-left">
               <li className="mb-2">
                 <Link href="/donate">
                   <a className="font-semibold text-tibet-red hover:text-tibet-red-light hover:underline">Join & Support</a>
