@@ -1,4 +1,5 @@
 import Image from 'next/future/image';
+import Link from 'next/link';
 import styles from 'styles/layout.module.scss';
 import classNames from 'classnames/bind';
 
@@ -7,13 +8,57 @@ export default function Footer() {
   return (
     <footer>
       <div className={cx('footerLayout')}>
-        <div className="flex flex-col py-5">
-          <div className="mx-auto mb-5">
-            <Image width={64} height={64} src="/favicon.png" alt="KalmuckRoad Software icon"/>
+        <div className="flex h-full w-full max-w-lg md:max-w-2xl lg:max-w-4xl xl:max-w-6xl py-5 px-2 md:px-6 justify-between mx-auto">
+          <div>
+            <ul>
+              <li className="mb-2">
+                <Link href="/">
+                  <a className="font-semibold text-tibet-red hover:text-tibet-red-light hover:underline">Home</a>
+                </Link>
+              </li>
+              <li className="mb-2">
+                <Link href="/about">
+                  <a className="font-semibold text-tibet-red hover:text-tibet-red-light hover:underline">About Us</a>
+                </Link>
+              </li>
+              <li className="mb-2">
+                <Link href="/events">
+                  <a className="font-semibold text-tibet-red hover:text-tibet-red-light hover:underline">Events</a>
+                </Link>
+              </li>
+              <li className="mb-2">
+                <Link href="/life">
+                  <a className="font-semibold text-tibet-red hover:text-tibet-red-light hover:underline">Temple Life</a>
+                </Link>
+              </li>
+              <li className="mb-2">
+                <Link href="/gallery">
+                  <a className="font-semibold text-tibet-red hover:text-tibet-red-light hover:underline">Gallery</a>
+                </Link>
+              </li>
+            </ul>
           </div>
-          <div className="text-center">
-            <p>Developer: Albert Sharapov</p>
-            <p>version {process.env.version}</p>
+          <div className="flex flex-col h-full justify-between items-center">
+            <div className="mx-auto">
+              <Image width={80} height={80} src="/favicon.png" alt="KalmuckRoad Software icon"/>
+            </div>
+            <div className="text-center mb-2">
+              <p>Copyright © 2022 Kalmyk-Mongolian Buddhist Center</p>
+            </div>
+          </div>
+          <div>
+            <ul>
+              <li className="mb-2">
+                <Link href="/donate">
+                  <a className="font-semibold text-tibet-red hover:text-tibet-red-light hover:underline">Join & Support</a>
+                </Link>
+              </li>
+              <li className="mb-2">
+                <Link href="/contact">
+                  <a className="font-semibold text-tibet-red hover:text-tibet-red-light hover:underline">Contact</a>
+                </Link>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
