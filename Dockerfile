@@ -11,8 +11,6 @@ FROM node:alpine AS builder
 # add environment variables to client code
 # ARG NEXT_PUBLIC_BACKEND_URL
 # ARG NEXT_PUBLIC_META_API_KEY
-
-
 # ENV NEXT_PUBLIC_BACKEND_URL=$NEXT_PUBLIC_BACKEND_URL
 # ENV NEXT_PUBLIC_META_API_KEY=$NEXT_PUBLIC_META_API_KEY
 
@@ -20,8 +18,7 @@ WORKDIR /app
 COPY . .
 COPY --from=deps /app/node_modules ./node_modules
 # ARG NODE_ENV=production
-# RUN echo ${NODE_ENV}
-# RUN NODE_ENV=${NODE_ENV} yarn build
+# ENVNODE_ENV=${NODE_ENV}
 ARG BRANCH
 ENV BRANCH=$BRANCH
 RUN yarn build

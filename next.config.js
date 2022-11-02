@@ -5,6 +5,9 @@ const nextConfig = {
   env: {
     version: "0.1.1"
   },
+	images: {
+		domains: ['localhost', 'cloud.blockberrypi.com']
+	},
 	experimental: {
 		images: {
 			allowFutureImage: true
