@@ -5,6 +5,8 @@ import { Modal } from 'components/Modal';
 import BackIcon from 'components/Icons/BackIcon';
 import { ImageDetail } from 'components/Image';
 import { getCloudHost } from 'utils';
+import { remark } from 'remark';
+import html from 'remark-html';
 
 export async function getStaticPaths() {
   const res = await fetch(`${getCloudHost()}/api/albums`);
@@ -18,18 +20,36 @@ export async function getStaticProps(context) {
   const albumName = album_name.split('_').join(' ');
   const res = await fetch(`${getCloudHost()}/api/albums?filters[name][$eqi]=${albumName}&populate=*`);
   const { data, meta } = await res.json();
+
+  const description = data[0].attributes.description;
+
+  if (description) {
+    const descriptionContent = await remark().use(html).process(description);
+    const descriptionHtml = descriptionContent.toString();
+    return {
+      props: {
+        albumName: data[0].attributes.name,
+        description: descriptionHtml,
+        photos: data[0].attributes.photos.data,
+        meta
+      }
+    }
+  }
+
   return {
-    props: { data, meta }
+    props: {
+      albumName: data[0].attributes.name,
+      photos: data[0].attributes.photos.data,
+      meta
+    }
   }
 }
 
-export default function Album({ data, meta }) {
+export default function Album({ albumName, description, photos, meta }) {
 
   const router = useRouter();
 
-  const albumName = data[0].attributes.name;
   const album_name = albumName.split(' ').join('_');
-  const photos = data[0].attributes.photos.data;
 
   return (
     <div className="w-full max-w-lg md:max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto px-4 md:py-12 py-6">
@@ -42,6 +62,11 @@ export default function Album({ data, meta }) {
       <h1 className="text-2xl text-txt-dark font-nunito-sans font-extrabold uppercase text-center mb-8">
         { albumName }
       </h1>
+      {
+        description
+        ? <div className="album-description mb-8" dangerouslySetInnerHTML={{ __html: description }}/>
+        : null
+      }
       {router.query.photo && (
         <Modal
           onClose={() => {

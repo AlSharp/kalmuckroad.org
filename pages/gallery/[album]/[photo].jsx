@@ -43,8 +43,10 @@ export async function getStaticProps(context) {
 export default function PhotoPage({ album_name, photo }) {
   const router = useRouter();
 
-  const photoURL = `${getCloudHost()}${photo.attributes.formats.large.url}`;
-  const { width, height } = photo.attributes.formats.large;
+  const photoFormat = photo.attributes.formats.large || photo.attributes;
+  const url = photoFormat.url;
+  const photoURL = `${getCloudHost()}${url}`;
+  const { width, height } = photoFormat;
 
   return (
     <div className="relative w-full h-screen bg-gray-800">
