@@ -12,7 +12,7 @@ export async function getStaticPaths() {
   const res = await fetch(`${getCloudHost()}/api/albums`);
   const { data: albums } = await res.json();
   const paths = albums.map(album => ({ params: { album: album.attributes.name.split(' ').join('_') } }))
-  return { paths, fallback: false };
+  return { paths, fallback: 'blocking' };
 }
 
 export async function getStaticProps(context) {
