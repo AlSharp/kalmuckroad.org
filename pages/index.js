@@ -16,7 +16,7 @@ export default function Home() {
   const cx = classNames.bind(styles);
 
   return (
-    <div className={cx('page')}>
+    <div className={cx('page', 'w-full min-h-[inherit]')}>
       <Head>
         <title>Kalmyk-Mongolian Buddhist Center</title>
         <meta
@@ -77,7 +77,7 @@ export default function Home() {
             </div>
             <div className="mb-8">
               <Link href="/donate">
-                <button className="bg-kalmyk-yellow hover:bg-yellow-500 text-txt-dark font-bold py-2 px-4 rounded mr-4">
+                <button className="bg-kalmyk-yellow hover:bg-yellow-500 text-txt-dark font-bold py-2 px-4 rounded mr-4" disabled>
                   Become a member
                 </button>
               </Link>
@@ -113,7 +113,7 @@ export default function Home() {
                 day="Saturday, November 12, 2022"
                 time="1:00 PM"
                 eventDesc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa eget egestas purus viverra accumsan in. Sit amet commodo nulla facilisi nullam vehicula ipsum a. Velit laoreet id donec ultrices tincidunt arcu non. Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque. Nibh ipsum consequat nisl vel pretium lectus quam. Id cursus metus aliquam eleifend mi in. Eget sit amet tellus cras adipiscing enim eu turpis egestas. Tincidunt eget nullam non nisi est. Eros in cursus turpis massa tincidunt dui ut. Sapien nec sagittis aliquam malesuada bibendum arcu vitae. Egestas congue quisque egestas diam in arcu. Suscipit tellus mauris a diam. Ornare lectus sit amet est placerat in egestas. Dui vivamus arcu felis bibendum ut tristique et. Urna molestie at elementum eu facilisis sed odio morbi. Gravida dictum fusce ut placerat orci nulla pellentesque dignissim."
-                eventURL="https://google.com"
+                eventURL="/"
                 imgSrc="/tsagan_sar_img.jpg"
               />
             </div>
@@ -125,7 +125,7 @@ export default function Home() {
                 day="Sunday, December 18, 2022"
                 time="6:00 PM"
                 eventDesc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa eget egestas purus viverra accumsan in. Sit amet commodo nulla facilisi nullam vehicula ipsum a. Velit laoreet id donec ultrices tincidunt arcu non. Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque. Nibh ipsum consequat nisl vel pretium lectus quam. Id cursus metus aliquam eleifend mi in. Eget sit amet tellus cras adipiscing enim eu turpis egestas. Tincidunt eget nullam non nisi est. Eros in cursus turpis massa tincidunt dui ut. Sapien nec sagittis aliquam malesuada bibendum arcu vitae."
-                eventURL="https://google.com"
+                eventURL="/"
                 imgSrc="/zul.jpg"
               />
             </div>
@@ -139,7 +139,7 @@ export default function Home() {
                 day="Monday, February 20, 2023"
                 time="6:00 PM"
                 eventDesc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa eget egestas purus viverra accumsan in. Sit amet commodo nulla facilisi nullam vehicula ipsum a. Velit laoreet id donec ultrices tincidunt arcu non. Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque. Nibh ipsum consequat nisl vel pretium lectus quam. Id cursus metus aliquam eleifend mi in."
-                eventURL="https://google.com"
+                eventURL="/"
                 imgSrc="/tsagan_sar_img.jpg"
               />
             </div>

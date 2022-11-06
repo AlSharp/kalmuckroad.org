@@ -27,13 +27,13 @@ export default function Footer() {
                 </Link>
               </li>
               <li className="mb-2">
-                <Link href="/life">
-                  <a className="font-semibold text-tibet-red hover:text-tibet-red-light hover:underline">Temple Life</a>
+                <Link href="/gallery">
+                  <a className="font-semibold text-tibet-red hover:text-tibet-red-light hover:underline">Gallery</a>
                 </Link>
               </li>
               <li className="mb-2">
-                <Link href="/gallery">
-                  <a className="font-semibold text-tibet-red hover:text-tibet-red-light hover:underline">Gallery</a>
+                <Link href="/donate">
+                  <a className="font-semibold text-tibet-red hover:text-tibet-red-light hover:underline">Join & Support</a>
                 </Link>
               </li>
             </ul>
@@ -48,11 +48,6 @@ export default function Footer() {
           </div>
           <div className="order-2 lg:order-3">
             <ul className="text-center lg:text-left">
-              <li className="mb-2">
-                <Link href="/donate">
-                  <a className="font-semibold text-tibet-red hover:text-tibet-red-light hover:underline">Join & Support</a>
-                </Link>
-              </li>
               <li className="mb-2">
                 <Link href="/contact">
                   <a className="font-semibold text-tibet-red hover:text-tibet-red-light hover:underline">Contact</a>

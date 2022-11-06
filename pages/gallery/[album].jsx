@@ -19,6 +19,7 @@ export async function getStaticProps(context) {
   const album_name = context.params.album;
   const albumName = album_name.split('_').join(' ');
   const res = await fetch(`${getCloudHost()}/api/albums?filters[name][$eqi]=${albumName}&populate=*`);
+  
   const { data, meta } = await res.json();
 
   const description = data[0].attributes.description;
@@ -32,7 +33,8 @@ export async function getStaticProps(context) {
         description: descriptionHtml,
         photos: data[0].attributes.photos.data,
         meta
-      }
+      },
+      revalidate: 10
     }
   }
 
@@ -41,7 +43,8 @@ export async function getStaticProps(context) {
       albumName: data[0].attributes.name,
       photos: data[0].attributes.photos.data,
       meta
-    }
+    },
+    revalidate: 10
   }
 }
 

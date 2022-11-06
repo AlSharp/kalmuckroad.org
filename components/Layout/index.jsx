@@ -10,7 +10,7 @@ export default function Layout({ children }) {
       <Header />
       <main>
         <div className={cx('mainLayout')}>
-          <div className={cx('pageContainer', 'w-full')}>
+          <div className={cx('pageContainer', 'w-full min-h-[inherit]')}>
             { children }
           </div>
         </div>

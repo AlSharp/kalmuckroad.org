@@ -92,14 +92,6 @@ export default function Header() {
                     <li>
                       <LinkWithCallback
                         className="block py-2 lg:py-1 px-3 w-max xl:text-lg text-tibet-red hover:text-tibet-red-light font-semibold hover:underline"
-                        text="Temple Life"
-                        href="/life"
-                        onClick={onMenuClose}
-                      />
-                    </li>
-                    <li>
-                      <LinkWithCallback
-                        className="block py-2 lg:py-1 px-3 w-max xl:text-lg text-tibet-red hover:text-tibet-red-light font-semibold hover:underline"
                         text="Gallery"
                         href="/gallery"
                         onClick={onMenuClose}
