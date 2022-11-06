@@ -36,24 +36,36 @@ export default function Donate() {
         <h1 className="text-2xl text-txt-dark font-nunito-sans font-extrabold uppercase text-center mb-8">
           Donate
         </h1>
-        <h2 className="text-lg text-txt-dark font-nunito-sans font-extrabold uppercase text-center mb-8">
+        <h2 className="text-xl text-txt-dark font-nunito-sans font-extrabold uppercase text-center mb-12">
           Please scan the QR code below to donate:
         </h2>
-        <div className="qr-code flex justify-center mb-8">
-          <Image
-            width={400}
-            height={400}
-            src="/qrcode_to_donate.png"
-            alt="Kalmuck Road Buddhist Temple QR code"
-          />
+        <div className="flex flex-col md:flex-row justify-between mb-16">
+          <div className="paypal-qr-code flex flex-col justify-center mb-8">
+            <h2 className="text-xl text-txt-dark font-nunito-sans font-extrabold text-center mb-8">Paypal</h2>
+            <Image
+              width={400}
+              height={400}
+              src="/qrcode_to_donate.png"
+              alt="Kalmuck Road Buddhist Temple Paypal QR code"
+            />
+          </div>
+          <div className="venmo-qr-code flex flex-col justify-center mb-8">
+            <h2 className="text-xl text-txt-dark font-nunito-sans font-extrabold text-center mb-8">Venmo</h2>
+            <Image
+              width={400}
+              height={400}
+              src="/venmo_qrcode_to_donate.svg"
+              alt="Kalmuck Road Buddhist Temple Venmo QR code"
+            />
+          </div>
         </div>
         <div className="for-checks flex flex-col justify-center mb-8 text-center">
-          <h3 className="text-lg text-txt-dark font-nunito-sans font-bold mb-4">For donation by check, please mail to:</h3>
-          <p>Kalmyk Mongolian Buddhist Center</p>
-          <p>Treasurer,</p>
-          <p>c/o D. Tchourumoff</p>
-          <p>122 Squirrel Tree Lane</p>
-          <p>Mt. Laurel, NJ 08054</p>
+          <h3 className="text-2xl text-txt-dark font-nunito-sans font-bold mb-4">For donation by check, please mail to:</h3>
+          <p className="text-lg text-txt-dark font-nunito-sans mb-1">Kalmyk Mongolian Buddhist Center</p>
+          <p className="text-lg text-txt-dark font-nunito-sans mb-1">Treasurer,</p>
+          <p className="text-lg text-txt-dark font-nunito-sans mb-1">c/o D. Tchourumoff</p>
+          <p className="text-lg text-txt-dark font-nunito-sans mb-1">122 Squirrel Tree Lane</p>
+          <p className="text-lg text-txt-dark font-nunito-sans mb-1">Mt. Laurel, NJ 08054</p>
         </div>
       </div>
     </div>
