@@ -22,9 +22,9 @@ export default function Gallery({ data }) {
   const renderAlbumList = albums => {
     return (
       <>
-        <h2 className="text-2xl text-txt-dark font-nunito-sans font-extrabold uppercase text-center mb-8">
+        <h1 className="text-2xl text-txt-dark font-nunito-sans font-extrabold uppercase text-center mb-8">
           Photo Albums
-        </h2>
+        </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
           {
             albums.map(album =>
