@@ -28,7 +28,7 @@ export default function Gallery({ data }) {
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
           {
             albums.map(album =>
-              <AlbumCard key={album.id} className="bg-white rounded-lg shadow-lg" album={album} /> 
+              <AlbumCard key={album.id} className="bg-white rounded-lg shadow-lg h-full" album={album} /> 
             )
           }
         </div>
