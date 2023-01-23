@@ -57,7 +57,7 @@ export default function Album({ albumName, description, photos, meta }) {
   return (
     <div className="w-full max-w-lg md:max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto px-4 md:py-12 py-6">
       <Link href="/gallery">
-        <a className="flex items-center py-2 lg:py-1 w-max xl:text-lg text-tibet-red hover:text-tibet-red-light font-semibold hover:underline">
+        <a className="flex items-center py-2 lg:py-1 w-max xl:text-lg text-tibet-red hover:text-tibet-red-light font-semibold hover:underline mb-6">
           <BackIcon className="w-5 h-5 mr-2" />
           Return back to gallery
         </a>
