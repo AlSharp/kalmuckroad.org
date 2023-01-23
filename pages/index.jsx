@@ -10,9 +10,23 @@ import 'swiper/css/autoplay';
 import 'swiper/css/effect-fade';
 import 'swiper/css/scrollbar';
 
-import EventCard from 'components/Cards/EventCard';
+import AlbumList from 'components/Lists/AlbumList';
+import EventMiniList from 'components/Lists/EventMiniList';
+import { getCloudHost } from 'utils';
 
-export default function Home() {
+export async function getStaticProps() {
+  const eventsRes = await fetch(`${getCloudHost()}/api/events?populate=*`);
+  const { data: events } = await eventsRes.json();
+
+  const albumsRes = await fetch(`${getCloudHost()}/api/albums?populate=*`);
+  const { data: albums } = await albumsRes.json();
+
+  return {
+    props: { events, albums }, revalidate: 10
+  }
+}
+
+export default function Home({ events, albums }) {
   const cx = classNames.bind(styles);
 
   return (
@@ -65,19 +79,12 @@ export default function Home() {
             <h1 className="text-3xl !leading-tight md:text-4xl lg:text-5xl text-txt-on-kalmyk-blue font-nunito-sans font-extrabold mb-8">
               Welcome to Tashi Lhunpo Buddhist Temple
             </h1>
-            <div className="flex mb-8 items-center">
-              <Link href="/about">
-                <a className="underline hover:no-underline text-white">Learn more about Tashi Lhumpo Buddhist Temple</a>
-              </Link>
-              <span className="border rounded-full w-4 h-4 ml-1">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-full h-full fill-white">
-                  <path fillRule="evenodd" d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z" clipRule="evenodd" />
-                </svg>
-              </span>
-            </div>
-            <div className="mb-8">
+            <EventMiniList
+              events={events}
+            />
+            <div className="flex justify-center mb-8">
               <Link href="/donate">
-                <button className="bg-kalmyk-yellow hover:bg-yellow-500 text-txt-dark font-bold py-2 px-4 rounded mr-4" disabled>
+                <button className="bg-kalmyk-yellow hover:bg-yellow-500 text-txt-dark font-bold py-2 px-4 rounded ml-0 lg:ml-4 mt-4" disabled>
                   Become a member
                 </button>
               </Link>
@@ -100,7 +107,7 @@ export default function Home() {
         </div>
       </div>
       <div className={cx('homePageContent', 'px-6 md:py-12 py-6')}>
-        <div className="upcoming-services w-full max-w-lg md:max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto mt-10">
+        {/* <div className="upcoming-services w-full max-w-lg md:max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto mt-10">
           <h2 className="text-2xl text-txt-dark font-nunito-sans font-extrabold uppercase text-center mb-10">
             Upcoming holiday services
           </h2>
@@ -144,6 +151,9 @@ export default function Home() {
               />
             </div>
           </div>
+        </div> */}
+        <div className={cx('albumList', 'w-full max-w-lg md:max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto')}>
+          <AlbumList albums={albums} />
         </div>
       </div>
     </div>

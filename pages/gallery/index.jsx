@@ -1,40 +1,22 @@
 import styles from 'styles/gallery.module.scss';
 import Head from 'next/head';
-import { useState } from 'react';
+import Link from 'next/link';
 import classNames from 'classnames/bind';
-import AlbumCard from 'components/Cards/AlbumCard';
+import AlbumList from 'components/Lists/AlbumList';
+import BackIcon from 'components/Icons/BackIcon';
 import { getCloudHost } from 'utils';
 
 export async function getStaticProps() {
   const res = await fetch(`${getCloudHost()}/api/albums?populate=*`);
-  const { data } = await res.json();
+  const { data: albums } = await res.json();
 
   return {
-    props: { data }, revalidate: 10
+    props: { albums }, revalidate: 10
   }
 }
 
-export default function Gallery({ data }) {
-  const [albums, setAlbums] = useState(data);
-  
+export default function Gallery({ albums }) {
   const cx = classNames.bind(styles);
-
-  const renderAlbumList = albums => {
-    return (
-      <>
-        <h1 className="text-2xl text-txt-dark font-nunito-sans font-extrabold uppercase text-center mb-8">
-          Photo Albums
-        </h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
-          {
-            albums.map(album =>
-              <AlbumCard key={album.id} className="bg-white rounded-lg shadow-lg h-full" album={album} /> 
-            )
-          }
-        </div>
-      </>
-    )
-  }
 
   return (
     <div className="page">
@@ -63,7 +45,13 @@ export default function Gallery({ data }) {
         <link rel="icon" type="image/png" href="./favicon.png" />
       </Head>
       <div className={cx('albumList', 'w-full max-w-lg md:max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto px-4 md:py-12 py-6')}>
-        { renderAlbumList(albums) }
+        <Link href="/">
+          <a className="flex items-center py-2 lg:py-1 w-max xl:text-lg text-tibet-red hover:text-tibet-red-light font-semibold hover:underline mb-6">
+            <BackIcon className="w-5 h-5 mr-2" />
+            Return back to home
+          </a>
+        </Link>
+        <AlbumList albums={albums} title="Photo Albums" />
       </div>
     </div>
   )
