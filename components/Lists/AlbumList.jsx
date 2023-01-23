@@ -1,6 +1,6 @@
 import AlbumCard from 'components/Cards/AlbumCard';
 
-export default ({ albums, title }) => {
+export default function AlbumList({ albums, title }) {
   return (
     <>
       {

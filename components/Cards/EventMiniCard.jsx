@@ -1,7 +1,6 @@
 import styles from 'styles/components.module.scss';
 import classNames from 'classnames/bind';
 import Link from 'next/link';
-import { getCloudHost } from 'utils';
 
 export default function EventMiniCard({ eventName, day, time, className }) {
 

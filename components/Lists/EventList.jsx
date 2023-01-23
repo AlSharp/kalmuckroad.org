@@ -2,7 +2,7 @@ import EventCard from 'components/Cards/EventCard';
 import dayjs from 'dayjs';
 import { getCloudHost } from 'utils';
 
-export default ({ events, title }) => {
+export default function EventList({ events, title }) {
   return (
     <>
       {
